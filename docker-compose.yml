@@ -1,0 +1,21 @@
+services:
+  db:
+    image: mongo:5.0.15
+    env_file: .env
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodata:/app/mongo/
+  back:
+    build: .
+    env_file: .env
+    volumes: 
+    - .:/app
+    depends_on:
+      - db
+    ports:
+    - 8000:8000
+
+volumes:
+  mongodata:
+  
