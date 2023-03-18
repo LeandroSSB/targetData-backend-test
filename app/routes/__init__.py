@@ -1,7 +1,6 @@
 from flask import Flask
-
-# need at least one route to make this function available
+from app.routes.user_blueprint import bp as user_blueprint
 
 
 def init_app(app: Flask):
-    pass
+    app.register_blueprint(user_blueprint)

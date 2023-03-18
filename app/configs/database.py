@@ -12,5 +12,5 @@ def init_app(app: Flask):
     mongo.init_app(app)
 
 
-def get_db():
+def get_db() -> PyMongo():
     return mongo.db[env("DATABASE")]

@@ -9,7 +9,7 @@ def create_app():
     if __name__ == '__main__':
         app.run(host='0.0.0.0')
     env.init_app(app)
-    # routes.init_app(app)
+    routes.init_app(app)
     database.init_app(app)
 
     @app.get("/")
